@@ -25,17 +25,6 @@ import {toggleNavbar} from 'states/main-actions.js';
 
 import './Main.css';
 
-import Amplify from 'aws-amplify';
-import awsmobile from '../aws-exports';
-import { 
-    withAuthenticator,
-    Authenticator,
-    SignOut
-} from 'aws-amplify-react'; // or 'aws-amplify-react-native';
-// import CustomSignOut from 'components/CustomSignOut.jsx';
-
-Amplify.configure(awsmobile);
-
 class Main extends React.Component {
     static propTypes = {
         searchText: PropTypes.string,
@@ -115,11 +104,7 @@ class Main extends React.Component {
     }
 }
 
-const federated = {
-    google_client_id: "1060937965775-8f576jlvsko0trg58g1s9t73qhbqismc.apps.googleusercontent.com"
-}
-
-export default withAuthenticator(connect(state => ({
+export default connect(state => ({
     ...state.main,
     searchText: state.searchText,
-}))(Main), true, [], federated);
+}))(Main);
