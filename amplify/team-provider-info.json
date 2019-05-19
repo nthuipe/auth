@@ -1,0 +1,21 @@
+{
+    "env": {
+        "awscloudformation": {
+            "AuthRoleName": "lab-weathermood-auth-env-20190519160404-authRole",
+            "UnauthRoleArn": "arn:aws:iam::707390182320:role/lab-weathermood-auth-env-20190519160404-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::707390182320:role/lab-weathermood-auth-env-20190519160404-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "lab-weathermood-auth-env-20190519160404-deployment",
+            "UnauthRoleName": "lab-weathermood-auth-env-20190519160404-unauthRole",
+            "StackName": "lab-weathermood-auth-env-20190519160404",
+            "StackId": "arn:aws:cloudformation:us-east-1:707390182320:stack/lab-weathermood-auth-env-20190519160404/acf081b0-7a0c-11e9-b432-0a00a1b75a8c"
+        },
+        "categories": {
+            "auth": {
+                "cognito78fdb883": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"1060937965775-8f576jlvsko0trg58g1s9t73qhbqismc.apps.googleusercontent.com\",\"client_secret\":\"FhNWrLxTXTMDbyRpcXke7XqJ\"}]"
+                }
+            }
+        }
+    }
+}
