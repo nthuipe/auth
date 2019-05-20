@@ -2,9 +2,10 @@
 In this assignment, you are asked to add authentication to your website.
 
 ## Requirement
-1. (60%) Basic login,logout and signup function.
+1. (50%) Basic login,logout and signup function.
 2. (20%) Signin with google account.
 3. (20%) Custom greeting component.
+4. (10%) Demo your website in lab
 
 ## Submit
 1. One submission per team.
