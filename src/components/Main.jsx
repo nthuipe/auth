@@ -23,6 +23,16 @@ import Forecast from 'components/Forecast.jsx';
 import {setSearchText} from 'states/post-actions.js';
 import {toggleNavbar} from 'states/main-actions.js';
 
+
+import Amplify from 'aws-amplify';
+import awsmobile from '../aws-exports';
+import { withAuthenticator, Signout } from 'aws-amplify-react';
+
+Amplify.configure(awsmobile);
+
+import Logout from 'components/Logout.jsx';
+
+
 import './Main.css';
 
 class Main extends React.Component {
@@ -67,7 +77,10 @@ class Main extends React.Component {
                                             this.props.searchText &&
                                             <i className='navbar-text fa fa-times' onClick={this.handleClearSearch}></i>
                                         }
+                                        <Logout isOpen = {this.props.authData.username}>
+                                        </Logout>
                                     </div>
+
                                 </Collapse>
                             </Navbar>
                         </div>
@@ -104,7 +117,17 @@ class Main extends React.Component {
     }
 }
 
-export default connect(state => ({
+// export default connect(state => ({
+    // ...state.main,
+    // searchText: state.searchText,
+// }))(Main);
+
+const federated = {
+    google_client_id: "596632800201-9vgpcln3q348srrolhdtpps0mj80c5ur.apps.googleusercontent.com"
+}
+
+
+export default withAuthenticator(connect(state => ({
     ...state.main,
     searchText: state.searchText,
-}))(Main);
+}))(Main), false, [], federated);

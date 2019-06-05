@@ -13,6 +13,8 @@ import {main} from 'states/main-reducers.js';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
+
+
 window.onload = function() {
     const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     const store = createStore(combineReducers({
